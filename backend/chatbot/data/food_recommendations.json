@@ -1,0 +1,46 @@
+{
+  "food_recommendations": [
+    {
+      "category": "protein",
+      "description": "Untuk pertumbuhan janin",
+      "foods": [
+        {
+          "name": "Telur",
+          "portion": "1 butir (50g)",
+          "benefits": "Sumber protein lengkap, kolin untuk perkembangan otak"
+        },
+        {
+          "name": "Ikan salmon",
+          "portion": "85-140g, 2-3x seminggu",
+          "benefits": "Omega-3 untuk perkembangan otak janin"
+        },
+        {
+          "name": "Daging tanpa lemak",
+          "portion": "85g/hari",
+          "benefits": "Zat besi heme yang mudah diserap"
+        }
+      ]
+    },
+    {
+      "category": "sayuran",
+      "description": "Untuk zat besi dan folat",
+      "foods": [
+        {
+          "name": "Bayam",
+          "portion": "1 mangkuk (30g)",
+          "benefits": "Kaya zat besi, folat, dan vitamin K"
+        },
+        {
+          "name": "Brokoli",
+          "portion": "1 mangkuk (30g)",
+          "benefits": "Kaya folat, kalsium, dan serat"
+        },
+        {
+          "name": "Kacang-kacangan",
+          "portion": "1/2 mangkuk (100g)",
+          "benefits": "Sumber protein nabati dan serat"
+        }
+      ]
+    }
+  ]
+}

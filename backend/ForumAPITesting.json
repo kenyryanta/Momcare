@@ -1,0 +1,488 @@
+{
+  "info": {
+    "_postman_id": "b7e2e2e2-4e2e-4e2e-8e2e-4e2e2e2e2e2e",
+    "name": "Forum API - Stunting Kehamilan",
+    "description": "Postman collection for full forum features (CRUD forum, topic, comment, moderation, notification) with stunting kehamilan theme. Import and use directly.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [{ "key": "base_url", "value": "http://localhost:5000" }],
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Register User",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"ibuhamil\",\n  \"email\": \"ibuhamil@example.com\",\n  \"password\": \"password123\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/auth/register",
+              "host": ["{{base_url}}"],
+              "path": ["api", "auth", "register"]
+            }
+          }
+        },
+        {
+          "name": "Login User",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "var jsonData = pm.response.json();",
+                  "if (jsonData.success && jsonData.data && jsonData.data.token) {",
+                  "    pm.environment.set(\"user_token\", jsonData.data.token);",
+                  "    pm.environment.set(\"user_id\", jsonData.data.user.id);",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"ibuhamil\",\n  \"password\": \"password123\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/auth/login",
+              "host": ["{{base_url}}"],
+              "path": ["api", "auth", "login"]
+            }
+          }
+        },
+        {
+          "name": "Login Admin",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "var jsonData = pm.response.json();",
+                  "if (jsonData.success && jsonData.data && jsonData.data.token) {",
+                  "    pm.environment.set(\"admin_token\", jsonData.data.token);",
+                  "    pm.environment.set(\"admin_id\", jsonData.data.user.id);",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"admin\",\n  \"password\": \"adminpassword\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/auth/login",
+              "host": ["{{base_url}}"],
+              "path": ["api", "auth", "login"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Forum",
+      "item": [
+        {
+          "name": "Get All Forums",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/forum/forums",
+              "host": ["{{base_url}}"],
+              "path": ["api", "forum", "forums"]
+            }
+          }
+        },
+        {
+          "name": "Create Forum - Pencegahan Stunting",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "var jsonData = pm.response.json();",
+                  "if (jsonData.success && jsonData.data && jsonData.data.id) {",
+                  "    pm.environment.set(\"forum_id\", jsonData.data.id);",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{admin_token}}" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Pencegahan Stunting Selama Kehamilan\",\n  \"description\": \"Diskusi strategi pencegahan stunting selama kehamilan.\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/forum/forums",
+              "host": ["{{base_url}}"],
+              "path": ["api", "forum", "forums"]
+            }
+          }
+        },
+        {
+          "name": "Get Forum Details",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/forum/forums/{{forum_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "forum", "forums", "{{forum_id}}"]
+            }
+          }
+        },
+        {
+          "name": "Update Forum",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{admin_token}}" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Pencegahan Stunting Selama Kehamilan - Update\",\n  \"description\": \"Update strategi pencegahan stunting selama kehamilan.\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/forum/forums/{{forum_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "forum", "forums", "{{forum_id}}"]
+            }
+          }
+        },
+        {
+          "name": "Delete Forum",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{admin_token}}" }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/forum/forums/{{forum_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "forum", "forums", "{{forum_id}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Topic",
+      "item": [
+        {
+          "name": "Create Topic - Asam Folat",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "var jsonData = pm.response.json();",
+                  "if (jsonData.success && jsonData.data && jsonData.data.id) {",
+                  "    pm.environment.set(\"topic_id\", jsonData.data.id);",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{user_token}}" }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "title",
+                  "value": "Pentingnya Asam Folat Untuk Mencegah Stunting",
+                  "type": "text"
+                },
+                {
+                  "key": "content",
+                  "value": "Asam folat sangat penting selama kehamilan untuk perkembangan otak dan saraf janin. Kekurangan asam folat dapat menyebabkan stunting dan masalah perkembangan lainnya.",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/api/forum/forums/{{forum_id}}/topics",
+              "host": ["{{base_url}}"],
+              "path": ["api", "forum", "forums", "{{forum_id}}", "topics"]
+            }
+          }
+        },
+        {
+          "name": "Get Topic Details",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/forum/topics/{{topic_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "forum", "topics", "{{topic_id}}"]
+            }
+          }
+        },
+        {
+          "name": "Update Topic",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{user_token}}" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Pentingnya Asam Folat Untuk Mencegah Stunting - Update\",\n  \"content\": \"Asam folat sangat penting selama kehamilan untuk perkembangan otak dan saraf janin. Update: Konsumsi asam folat minimal 3 bulan sebelum hamil.\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/forum/topics/{{topic_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "forum", "topics", "{{topic_id}}"]
+            }
+          }
+        },
+        {
+          "name": "Delete Topic",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{user_token}}" }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/forum/topics/{{topic_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "forum", "topics", "{{topic_id}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Comment",
+      "item": [
+        {
+          "name": "Create Comment",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "var jsonData = pm.response.json();",
+                  "if (jsonData.success && jsonData.data && jsonData.data.id) {",
+                  "    pm.environment.set(\"comment_id\", jsonData.data.id);",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{user_token}}" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"content\": \"Terima kasih atas informasinya! Saya sudah mengonsumsi asam folat sejak 2 bulan sebelum hamil.\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/forum/topics/{{topic_id}}/comments",
+              "host": ["{{base_url}}"],
+              "path": ["api", "forum", "topics", "{{topic_id}}", "comments"]
+            }
+          }
+        },
+        {
+          "name": "Update Comment",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{user_token}}" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"content\": \"Update: Saya konsumsi asam folat sejak 3 bulan sebelum hamil.\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/forum/comments/{{comment_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "forum", "comments", "{{comment_id}}"]
+            }
+          }
+        },
+        {
+          "name": "Delete Comment",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{user_token}}" }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/forum/comments/{{comment_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "forum", "comments", "{{comment_id}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Moderation",
+      "item": [
+        {
+          "name": "Get Unmoderated Topics",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{admin_token}}" }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/forum/moderation/topics",
+              "host": ["{{base_url}}"],
+              "path": ["api", "forum", "moderation", "topics"]
+            }
+          }
+        },
+        {
+          "name": "Get Unmoderated Comments",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{admin_token}}" }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/forum/moderation/comments",
+              "host": ["{{base_url}}"],
+              "path": ["api", "forum", "moderation", "comments"]
+            }
+          }
+        },
+        {
+          "name": "Moderate Topic - Approve",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{admin_token}}" }
+            ],
+            "body": { "mode": "raw", "raw": "{\n  \"action\": \"approve\"\n}" },
+            "url": {
+              "raw": "{{base_url}}/api/forum/moderation/topics/{{topic_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "forum", "moderation", "topics", "{{topic_id}}"]
+            }
+          }
+        },
+        {
+          "name": "Moderate Comment - Approve",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{admin_token}}" }
+            ],
+            "body": { "mode": "raw", "raw": "{\n  \"action\": \"approve\"\n}" },
+            "url": {
+              "raw": "{{base_url}}/api/forum/moderation/comments/{{comment_id}}",
+              "host": ["{{base_url}}"],
+              "path": [
+                "api",
+                "forum",
+                "moderation",
+                "comments",
+                "{{comment_id}}"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Notification",
+      "item": [
+        {
+          "name": "Get User Notifications",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{user_token}}" }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/forum/notifications",
+              "host": ["{{base_url}}"],
+              "path": ["api", "forum", "notifications"]
+            }
+          }
+        },
+        {
+          "name": "Get Unread Notification Count",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{user_token}}" }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/forum/notifications/count",
+              "host": ["{{base_url}}"],
+              "path": ["api", "forum", "notifications", "count"]
+            }
+          }
+        },
+        {
+          "name": "Mark Notification as Read",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{user_token}}" }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/forum/notifications/{{notification_id}}/read",
+              "host": ["{{base_url}}"],
+              "path": [
+                "api",
+                "forum",
+                "notifications",
+                "{{notification_id}}",
+                "read"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Mark All Notifications as Read",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{user_token}}" }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/forum/notifications/read-all",
+              "host": ["{{base_url}}"],
+              "path": ["api", "forum", "notifications", "read-all"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

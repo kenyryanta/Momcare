@@ -1,0 +1,34 @@
+{
+  "stunting_prevention": [
+    {
+      "factor": "ASI eksklusif",
+      "importance": "Tinggi",
+      "description": "Berikan ASI eksklusif selama 6 bulan pertama untuk memberikan nutrisi optimal dan meningkatkan sistem kekebalan tubuh bayi"
+    },
+    {
+      "factor": "Nutrisi ibu hamil",
+      "importance": "Tinggi",
+      "description": "Pastikan ibu hamil mendapatkan nutrisi yang cukup, terutama protein, zat besi, asam folat, dan kalsium"
+    },
+    {
+      "factor": "MPASI bergizi",
+      "importance": "Tinggi",
+      "description": "Berikan makanan pendamping ASI yang bergizi dan beragam setelah bayi berusia 6 bulan"
+    },
+    {
+      "factor": "Pemantauan pertumbuhan",
+      "importance": "Sedang",
+      "description": "Pantau pertumbuhan anak secara teratur di posyandu atau fasilitas kesehatan"
+    },
+    {
+      "factor": "Sanitasi dan kebersihan",
+      "importance": "Sedang",
+      "description": "Jaga kebersihan lingkungan, cuci tangan dengan sabun, dan pastikan akses ke air bersih untuk mencegah infeksi dan diare"
+    },
+    {
+      "factor": "Imunisasi lengkap",
+      "importance": "Sedang",
+      "description": "Berikan imunisasi lengkap sesuai jadwal untuk melindungi anak dari penyakit infeksi yang dapat menghambat pertumbuhan"
+    }
+  ]
+}

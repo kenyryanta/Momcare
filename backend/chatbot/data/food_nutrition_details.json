@@ -1,0 +1,92 @@
+{
+  "food_nutrition_details": [
+    {
+      "name": "telur",
+      "category": "Protein",
+      "portion": "1 butir (50g)",
+      "nutrients": {
+        "protein": "6g",
+        "lemak": "5g",
+        "karbohidrat": "0.6g",
+        "kalori": "70",
+        "vitamin": [
+          "A",
+          "D",
+          "E",
+          "K",
+          "B12"
+        ],
+        "mineral": [
+          "Zat besi",
+          "Selenium",
+          "Fosfor"
+        ]
+      },
+      "benefits_pregnancy": "Membantu perkembangan otak janin, sumber protein lengkap, mengandung kolin untuk perkembangan saraf"
+    },
+    {
+      "name": "ikan_salmon",
+      "category": "Protein",
+      "portion": "100g",
+      "nutrients": {
+        "protein": "22g",
+        "lemak": "13g",
+        "karbohidrat": "0g",
+        "kalori": "206",
+        "vitamin": [
+          "D",
+          "B12"
+        ],
+        "mineral": [
+          "Selenium",
+          "Fosfor"
+        ]
+      },
+      "benefits_pregnancy": "Kaya omega-3 untuk perkembangan otak janin, menurunkan risiko kelahiran prematur"
+    },
+    {
+      "name": "bayam",
+      "category": "Sayuran",
+      "portion": "100g",
+      "nutrients": {
+        "protein": "2.9g",
+        "lemak": "0.4g",
+        "karbohidrat": "3.6g",
+        "kalori": "23",
+        "vitamin": [
+          "A",
+          "C",
+          "K",
+          "Folat"
+        ],
+        "mineral": [
+          "Zat besi",
+          "Kalsium",
+          "Magnesium"
+        ]
+      },
+      "benefits_pregnancy": "Mencegah anemia, mendukung perkembangan tulang, meningkatkan sistem kekebalan tubuh"
+    },
+    {
+      "name": "brokoli",
+      "category": "Sayuran",
+      "portion": "100g",
+      "nutrients": {
+        "protein": "2.8g",
+        "lemak": "0.4g",
+        "karbohidrat": "6.6g",
+        "kalori": "34",
+        "vitamin": [
+          "C",
+          "K",
+          "Folat"
+        ],
+        "mineral": [
+          "Kalsium",
+          "Kalium"
+        ]
+      },
+      "benefits_pregnancy": "Mendukung perkembangan tulang janin, mencegah cacat tabung saraf"
+    }
+  ]
+}

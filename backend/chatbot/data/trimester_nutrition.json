@@ -1,0 +1,135 @@
+{
+  "trimester_nutrition": [
+    {
+      "trimester": "trimester_pertama",
+      "calorie_needs": "Tambahan 300 kalori/hari",
+      "protein_needs": "60g/hari (peningkatan dari 46g/hari)",
+      "key_nutrients": [
+        {
+          "name": "Folat",
+          "amount": "600μg/hari",
+          "importance": "Mencegah cacat tabung saraf",
+          "sources": [
+            "Sayuran hijau",
+            "Kacang-kacangan",
+            "Jeruk"
+          ]
+        },
+        {
+          "name": "Zat Besi",
+          "amount": "27mg/hari",
+          "importance": "Mencegah anemia",
+          "sources": [
+            "Daging merah",
+            "Bayam",
+            "Kacang-kacangan"
+          ]
+        },
+        {
+          "name": "Kalsium",
+          "amount": "1000mg/hari",
+          "importance": "Pembentukan tulang janin",
+          "sources": [
+            "Susu",
+            "Keju",
+            "Yogurt"
+          ]
+        }
+      ],
+      "recommendations": "Makan porsi kecil tapi sering untuk mengatasi mual, hindari makanan berminyak dan pedas",
+      "common_issues": [
+        "Morning sickness",
+        "Mual",
+        "Muntah",
+        "Kelelahan"
+      ]
+    },
+    {
+      "trimester": "trimester_kedua",
+      "calorie_needs": "Tambahan 300 kalori/hari",
+      "protein_needs": "60g/hari",
+      "key_nutrients": [
+        {
+          "name": "Omega-3",
+          "amount": "200-300mg DHA/hari",
+          "importance": "Perkembangan otak janin",
+          "sources": [
+            "Ikan salmon",
+            "Sarden",
+            "Minyak ikan"
+          ]
+        },
+        {
+          "name": "Kalsium",
+          "amount": "1000mg/hari",
+          "importance": "Pembentukan tulang dan gigi janin",
+          "sources": [
+            "Susu",
+            "Yogurt",
+            "Keju"
+          ]
+        },
+        {
+          "name": "Vitamin D",
+          "amount": "15μg/hari",
+          "importance": "Penyerapan kalsium",
+          "sources": [
+            "Ikan berlemak",
+            "Telur",
+            "Susu fortifikasi"
+          ]
+        }
+      ],
+      "recommendations": "Fokus pada makanan bergizi tinggi, hindari makanan olahan dan tinggi gula",
+      "common_issues": [
+        "Sembelit",
+        "Sakit punggung",
+        "Heartburn"
+      ]
+    },
+    {
+      "trimester": "trimester_ketiga",
+      "calorie_needs": "Tambahan 300 kalori/hari",
+      "protein_needs": "60g/hari",
+      "key_nutrients": [
+        {
+          "name": "Zat Besi",
+          "amount": "27mg/hari",
+          "importance": "Mencegah anemia dan mempersiapkan persalinan",
+          "sources": [
+            "Daging merah",
+            "Bayam",
+            "Hati"
+          ]
+        },
+        {
+          "name": "Vitamin K",
+          "amount": "90μg/hari",
+          "importance": "Pembekuan darah",
+          "sources": [
+            "Sayuran hijau",
+            "Brokoli",
+            "Bayam"
+          ]
+        },
+        {
+          "name": "Magnesium",
+          "amount": "350-360mg/hari",
+          "importance": "Mencegah kelahiran prematur",
+          "sources": [
+            "Kacang-kacangan",
+            "Biji-bijian",
+            "Sayuran hijau"
+          ]
+        }
+      ],
+      "recommendations": "Makan makanan tinggi serat, hindari makanan tinggi sodium, minum banyak air",
+      "common_issues": [
+        "Heartburn",
+        "Sesak napas",
+        "Kram kaki",
+        "Sulit tidur"
+      ]
+    }
+  ]
+}

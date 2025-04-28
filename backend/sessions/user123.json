@@ -1,0 +1,26 @@
+{
+  "user_id": "user123",
+  "messages": [
+    {
+      "content": "Berikan saran pertanyaan untuk ibu hamil",
+      "is_user": true,
+      "timestamp": "2025-04-16T17:27:57.208170",
+      "attachments": []
+    },
+    {
+      "content": "Halo Ibu, selamat atas kehamilannya! Nutrisi yang baik selama kehamilan sangat penting untuk kesehatan Ibu dan perkembangan optimal janin. Saya akan memberikan beberapa saran pertanyaan yang bisa Ibu pertimbangkan untuk diajukan kepada dokter atau ahli gizi Ibu, serta beberapa informasi penting mengenai nutrisi selama kehamilan.\n\nBerikut beberapa pertanyaan yang mungkin bermanfaat:\n\n*   **Kebutuhan Kalori:** \"Dok/Bu Bidan, berapa kebutuhan kalori saya setiap hari selama kehamilan ini? Apakah ada perubahan kebutuhan kalori di setiap trimester?\"\n*   **Suplemen:** \"Apakah saya perlu mengonsumsi suplemen tambahan seperti asam folat, zat besi, atau vitamin D selain dari makanan yang saya konsumsi?\"\n*   **Makanan yang Harus Dihindari:** \"Adakah makanan atau minuman tertentu yang sebaiknya saya hindari selama kehamilan?\"\n*   **Kondisi Kesehatan:** \"Saya memiliki kondisi kesehatan tertentu (misalnya, diabetes gestasional, tekanan darah tinggi). Apakah ada penyesuaian khusus pada pola makan saya?\"\n*   **Menu Harian:** \"Bisakah Ibu/Dokter memberikan contoh menu harian yang seimbang dan kaya nutrisi untuk ibu hamil?\"\n\n**Informasi Nutrisi Penting untuk Ibu Hamil:**\n\nSelama kehamilan, Ibu membutuhkan lebih banyak nutrisi dibandingkan biasanya. Berikut beberapa nutrisi penting dan contoh makanan yang bisa Ibu konsumsi:\n\n*   **Protein:** Penting untuk pertumbuhan dan perkembangan janin. Sumber protein yang baik antara lain:\n    *   **Telur:** Satu butir telur (50g) mengandung protein lengkap dan kolin yang baik untuk perkembangan otak janin.\n    *   **Ikan Salmon:** Konsumsi 2-3 kali seminggu (85-140g per porsi) untuk mendapatkan omega-3 yang penting untuk perkembangan otak janin.\n    *   **Daging Tanpa Lemak:** Konsumsi sekitar 85g per hari untuk mendapatkan zat besi heme yang mudah diserap tubuh.\n    *   **Kacang-kacangan:** Konsumsi 1/2 mangkuk (100g) sebagai sumber protein nabati dan serat.\n*   **Zat Besi dan Folat:** Penting untuk mencegah anemia dan cacat lahir. Sumber yang baik antara lain:\n    *   **Bayam:** Satu mangkuk (30g) bayam kaya akan zat besi, folat, dan vitamin K.\n    *   **Brokoli:** Satu mangkuk (30g) brokoli kaya akan folat, kalsium, dan serat.\n*   **Serat:** Membantu mencegah sembelit yang umum terjadi selama kehamilan. Bisa didapatkan dari sayuran dan kacang-kacangan.\n\n**Contoh Menu Harian (Ini hanya contoh, konsultasikan dengan dokter atau ahli gizi untuk kebutuhan spesifik Ibu):**\n\n*   **Sarapan:** Telur rebus, roti gandum, dan segelas susu.\n*   **Makan Siang:** Nasi, ikan salmon panggang, dan tumis brokoli.\n*   **Makan Malam:** Nasi, daging tanpa lemak, dan sayur bayam.\n*   **Camilan:** Buah-buahan segar dan kacang-kacangan.\n\n**Penting untuk diingat:** Informasi yang saya berikan bersifat umum. Kebutuhan nutrisi setiap ibu hamil bisa berbeda-beda. Selalu konsultasikan dengan dokter atau ahli gizi untuk mendapatkan saran yang paling tepat sesuai dengan kondisi kesehatan Ibu.\n\nSemoga informasi ini bermanfaat, Ibu! Jangan ragu untuk bertanya jika ada hal lain yang ingin Ibu ketahui.\n",
+      "is_user": false,
+      "timestamp": "2025-04-16T17:28:01.975528",
+      "attachments": []
+    }
+  ],
+  "context": {
+    "last_intent": "nutrisi_kehamilan",
+    "last_entities": {
+      "food_item": "ikan"
+    },
+    "last_context": [
+      "rekomendasi_makanan"
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+name: pregnancy_app
+description: "A new Flutter project."
+
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0" # Sesuaikan dengan versi SDK Dart yang kompatibel
+
+dependencies:
+  flutter:
+    sdk: flutter
+  shared_preferences:
+  flutter_markdown: ^0.6.18
+  cupertino_icons: ^1.0.2
+  google_fonts: ^6.1.0
+  flutter_svg: ^2.0.9
+  cached_network_image: ^3.3.0
+  percent_indicator: ^4.2.3
+  provider: ^6.1.1
+  intl: ^0.19.0
+  http: ^1.1.0
+  animated_text_kit: ^4.2.2
+  lottie: ^2.7.0
+  image_picker: ^1.0.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
