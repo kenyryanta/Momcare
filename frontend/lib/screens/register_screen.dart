@@ -1,11 +1,14 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 import '../services/auth_service.dart';
 import '../utils/validators.dart';
 import '../widgets/custom_text_field.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../theme/app_theme.dart';
 
 class RegisterScreen extends StatefulWidget {
-  const RegisterScreen({Key? key}) : super(key: key);
+  const RegisterScreen({super.key});
 
   @override
   _RegisterScreenState createState() => _RegisterScreenState();
@@ -18,6 +21,10 @@ class _RegisterScreenState extends State<RegisterScreen>
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   final _confirmPasswordController = TextEditingController();
+  final _ageController = TextEditingController();
+  final _weightController = TextEditingController();
+  final _heightController = TextEditingController();
+  final _trimesterController = TextEditingController();
   final _authService = AuthService();
 
   bool _isLoading = false;
@@ -65,7 +72,6 @@ class _RegisterScreenState extends State<RegisterScreen>
     if (!_formKey.currentState!.validate()) {
       return;
     }
-
     setState(() {
       _isLoading = true;
     });
@@ -75,20 +81,24 @@ class _RegisterScreenState extends State<RegisterScreen>
         _usernameController.text.trim(),
         _emailController.text.trim(),
         _passwordController.text,
+        int.tryParse(_ageController.text.trim()) ?? 0,
+        int.tryParse(_weightController.text.trim()) ?? 0,
+        int.tryParse(_heightController.text.trim()) ?? 0,
+        int.tryParse(_trimesterController.text.trim()) ?? 0,
       );
 
       if (response['success'] == true) {
-        // Registrasi berhasil
+        final token = response['token'];
+        final prefs = await SharedPreferences.getInstance();
+        await prefs.setString('jwtoken', token);
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(response['message'] ?? 'Registrasi berhasil'),
             backgroundColor: Colors.green,
           ),
         );
-        // Kembali ke halaman login
         Navigator.pop(context);
       } else {
-        // Registrasi gagal
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(response['message'] ?? 'Registrasi gagal'),
@@ -110,12 +120,43 @@ class _RegisterScreenState extends State<RegisterScreen>
     }
   }
 
+  Future<void> setNutritionGoal() async {
+    // Retrieve the JWT token from storage
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    String token = prefs.getString('jwt_token') ?? '';
+
+    // Send a POST request to the protected route with the token
+    final response = await http.post(
+      Uri.parse(
+          'http://192.168.1.10:5000/nutrition/set_goal'), // Replace with your actual API endpoint
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer $token', // Send the JWT token here
+      },
+    );
+
+    if (response.statusCode == 201) {
+      // Successfully set the goal
+      final data = json.decode(response.body);
+      print(data['message']);
+      // Navigate to the dashboard or home screen
+      Navigator.pushReplacementNamed(context, '/dashboard');
+    } else {
+      // Handle error
+      print('Failed to set goal');
+    }
+  }
+
   @override
   void dispose() {
     _usernameController.dispose();
     _emailController.dispose();
     _passwordController.dispose();
     _confirmPasswordController.dispose();
+    _ageController.dispose();
+    _weightController.dispose();
+    _heightController.dispose();
+    _trimesterController.dispose();
     _animationController.dispose();
     super.dispose();
   }
@@ -152,7 +193,7 @@ class _RegisterScreenState extends State<RegisterScreen>
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Teks pembuka
+                    // Opening text
                     Center(
                       child: Column(
                         children: [
@@ -219,7 +260,7 @@ class _RegisterScreenState extends State<RegisterScreen>
                       validator: Validators.validatePassword,
                     ),
 
-                    // Konfirmasi password field
+                    // Confirm password field
                     CustomTextField(
                       controller: _confirmPasswordController,
                       hintText: 'Konfirmasi password anda',
@@ -239,9 +280,55 @@ class _RegisterScreenState extends State<RegisterScreen>
                       validator: _validateConfirmPassword,
                     ),
 
+                    const SizedBox(height: 16),
+
+                    // Age field
+                    CustomTextField(
+                      controller: _ageController,
+                      hintText: 'Masukkan usia anda',
+                      labelText: 'Usia',
+                      keyboardType: TextInputType.number,
+                      prefixIcon: const Icon(Icons.calendar_today,
+                          color: AppTheme.primaryColor),
+                      validator: Validators.validateAge,
+                    ),
+
+                    // Weight field
+                    CustomTextField(
+                      controller: _weightController,
+                      hintText: 'Masukkan berat badan anda (kg)',
+                      labelText: 'Berat Badan',
+                      keyboardType: TextInputType.number,
+                      prefixIcon: const Icon(Icons.accessibility_new,
+                          color: AppTheme.primaryColor),
+                      validator: Validators.validateWeight,
+                    ),
+
+                    // Height field
+                    CustomTextField(
+                      controller: _heightController,
+                      hintText: 'Masukkan tinggi badan anda (cm)',
+                      labelText: 'Tinggi Badan',
+                      keyboardType: TextInputType.number,
+                      prefixIcon: const Icon(Icons.height,
+                          color: AppTheme.primaryColor),
+                      validator: Validators.validateHeight,
+                    ),
+
+                    // Trimester field
+                    CustomTextField(
+                      controller: _trimesterController,
+                      hintText: 'Masukkan trimester ke-berapa',
+                      labelText: 'Trimester',
+                      keyboardType: TextInputType.number,
+                      prefixIcon: const Icon(Icons.pregnant_woman,
+                          color: AppTheme.primaryColor),
+                      validator: Validators.validateTrimester,
+                    ),
+
                     const SizedBox(height: 32),
 
-                    // Tombol register
+                    // Register button
                     SizedBox(
                       width: double.infinity,
                       height: 55,
@@ -268,7 +355,7 @@ class _RegisterScreenState extends State<RegisterScreen>
 
                     const SizedBox(height: 24),
 
-                    // Link ke Login
+                    // Login link
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -278,7 +365,7 @@ class _RegisterScreenState extends State<RegisterScreen>
                         ),
                         GestureDetector(
                           onTap: () {
-                            Navigator.pop(context); // Kembali ke login
+                            Navigator.pop(context); // Go back to login
                           },
                           child: const Text(
                             'Masuk sekarang',

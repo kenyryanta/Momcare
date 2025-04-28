@@ -5,7 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../models/user_model.dart';
 
 class AuthService with ChangeNotifier {
-  static const String baseUrl = 'http://192.168.0.103:5000/api';
+  static const String baseUrl = 'http://192.168.1.10:5000/api';
 
   bool _isAuthenticated = false;
   String? _token;
@@ -70,8 +70,8 @@ class AuthService with ChangeNotifier {
   }
 
   // Register user
-  Future<Map<String, dynamic>> register(
-      String username, String email, String password) async {
+  Future<Map<String, dynamic>> register(String username, String email,
+      String password, int age, int weight, int height, int trimester) async {
     try {
       final response = await http.post(
         Uri.parse('$baseUrl/auth/register'),
@@ -80,6 +80,10 @@ class AuthService with ChangeNotifier {
           'username': username,
           'email': email,
           'password': password,
+          'age': age,
+          'weight': weight,
+          'height': height,
+          'trimester': trimester
         }),
       );
       return jsonDecode(response.body);

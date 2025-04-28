@@ -24,6 +24,8 @@ dependencies:
   animated_text_kit: ^4.2.2
   lottie: ^2.7.0
   image_picker: ^1.0.4
+  image: ^3.0.1
+  flutter_image_compress: 2.4.0
 
 dev_dependencies:
   flutter_test:

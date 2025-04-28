@@ -5,7 +5,7 @@ import '../models/forum_model.dart';
 import '../models/comment_model.dart';
 
 class ForumService {
-  static const String baseUrl = 'http://192.168.0.103:5000/api';
+  static const String baseUrl = 'http://192.168.1.10:5000/api';
   final Map<String, String> headers;
 
   ForumService({required this.headers});

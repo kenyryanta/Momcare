@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:pregnancy_app/screens/food_capture_widget.dart';
+import 'package:pregnancy_app/screens/food_result_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -31,7 +33,7 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -69,7 +71,9 @@ class MyApp extends StatelessWidget {
 }
 
 class MainNavigationScreen extends StatefulWidget {
-  const MainNavigationScreen({Key? key}) : super(key: key);
+  final int initialIndex;
+  const MainNavigationScreen({Key? key, this.initialIndex = 0})
+      : super(key: key);
 
   @override
   State<MainNavigationScreen> createState() => _MainNavigationScreenState();
@@ -78,10 +82,17 @@ class MainNavigationScreen extends StatefulWidget {
 class _MainNavigationScreenState extends State<MainNavigationScreen> {
   int _selectedIndex = 0;
 
+  @override
+  void initState() {
+    super.initState();
+    _selectedIndex = widget.initialIndex; // ← use the passed-in index
+  }
+
   // List of screens for bottom navigation
   final List<Widget> _screens = [
     const HomeScreen(),
-    const ForumScreen(), // Forum screen
+    const ForumScreen(),
+    const FoodCapture(), // Forum screen
     const ChatScreen(),
     const ProfileScreen(),
   ];
@@ -141,6 +152,11 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
             icon: Icon(Icons.forum_outlined),
             activeIcon: Icon(Icons.forum),
             label: AppConstants.forumTab,
+          ),
+          const BottomNavigationBarItem(
+            icon: Icon(Icons.camera_alt),
+            activeIcon: Icon(Icons.camera_alt),
+            label: 'Tracker',
           ),
           const BottomNavigationBarItem(
             icon: Icon(Icons.chat_bubble_outline),

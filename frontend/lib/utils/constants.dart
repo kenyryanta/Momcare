@@ -37,6 +37,8 @@ class AppConstants {
   static const String forumTab = 'forum';
   static const String chatTab = 'Chat';
   static const String profileTab = 'Profil';
+  static const String trackerTab = 'Tracker';
+
   // Shared Preferences keys
   static const String isLoggedInKey = "isLoggedIn";
   static const String tokenKey = "token";
