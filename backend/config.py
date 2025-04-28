@@ -12,7 +12,7 @@ class DevelopmentConfig(Config):
     DEBUG = True
     SQLALCHEMY_DATABASE_URI = 'mysql://{}:{}@{}/{}'.format(
         os.getenv('DB_USER', 'root'),
-        os.getenv('DB_PASSWORD', ''),
+        os.getenv('DB_PASSWORD', 'admin'),
         os.getenv('DB_HOST', 'localhost'),
         os.getenv('DB_NAME', 'chatbot_db')
     )

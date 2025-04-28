@@ -12,18 +12,25 @@ def register():
     """
     data = request.get_json()
 
-    if not all(key in data for key in ['username', 'email', 'password']):
+    if not all(key in data for key in ['username', 'email', 'password', 'age', 'weight', 'height', 'trimester']):
         return jsonify({'success': False, 'message': 'Data tidak lengkap'}), 400
     
     if User.find_by_email(data['email']):
         return jsonify({'success': False, 'message': 'Email sudah terdaftar'}), 400
     
     try:
-        new_user = User.create(data['username'], data['email'], data['password'])
-        return jsonify({'success': True, 'message': 'Registrasi berhasil', 'user': new_user.to_dict()}), 201
-    
+        new_user = User.create(data['username'], data['email'], data['password'], data['age'], data['height'], data['weight'], data['trimester'])
+        access_token = create_access_token(identity=str(new_user.id))
+        return jsonify({
+        'success': True,
+        'message': 'Registrasi berhasil',
+        'user': new_user.to_dict(),
+        'token': access_token
+        }), 201
+        
     except Exception as e:
         return jsonify({'success': False, 'message': str(e)}), 500
+        
 
 
 @auth_bp.route('/login', methods=['POST'])

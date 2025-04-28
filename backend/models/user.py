@@ -9,33 +9,47 @@ class User(db.Model):
     username = db.Column(db.String(50), unique=True, nullable=False)
     email = db.Column(db.String(100), unique=True, nullable=False)
     password = db.Column(db.String(255), nullable=False)
+    age = db.Column(db.Integer, nullable=False)
+    height = db.Column(db.Integer, nullable=False)
+    weight = db.Column(db.Integer, nullable=False)
+    trimester = db.Column(db.Integer, nullable=False)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     is_admin = db.Column(db.Boolean, default=False)  # Tambahan untuk fitur admin berdasarkan sequence diagram
     
     # Relationships berdasarkan sequence diagram dan struktur folder
-    forums = db.relationship('Forum', backref='author', lazy=True, cascade='all, delete-orphan')
+    forums = db.relationship('Forum', backref='author', lazy=True, cascade='all, delete-orphan', overlaps='author' )
     comments = db.relationship('Comment', backref='author', lazy=True, cascade='all, delete-orphan')
     likes = db.relationship('Like', backref='user', lazy=True, cascade='all, delete-orphan')
     notifications = db.relationship('Notification', backref='user', lazy=True, cascade='all, delete-orphan')
+    nutrition_goal = db.relationship('DailyNutrition', backref='user', lazy=True)
+
     
-    def __init__(self, id=None, username=None, email=None, password=None, created_at=None, is_admin=False):
+    def __init__(self, id=None, username=None, email=None, password=None, age=None, height=None, weight=None, trimester=None, created_at=None, is_admin=False):
         """Inisialisasi objek User"""
         self.id = id
         self.username = username
         self.email = email
         self.password = password
+        self.age = age
+        self.height = height
+        self.weight = weight
+        self.trimester = trimester
         self.created_at = created_at or datetime.utcnow()
         self.is_admin = is_admin
     
     @classmethod
-    def create(cls, username, email, password):
-        """Membuat user baru dengan password terenkripsi"""
+    def create(cls, username, email, password, age, height, weight, trimester):
+        """Membuat user baru dengan password terenkripsi dan data kehamilan"""
         try:
             hashed_password = hash_password(password)
             new_user = cls(
                 username=username,
                 email=email,
-                password=hashed_password
+                password=hashed_password,
+                age=age,
+                height=height,
+                weight=weight,
+                trimester=trimester
             )
             db.session.add(new_user)
             db.session.commit()

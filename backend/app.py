@@ -21,12 +21,12 @@ app.static_folder = 'static'
 # Database configuration
 app.config['MYSQL_HOST'] = os.getenv('DB_HOST', 'localhost')
 app.config['MYSQL_USER'] = os.getenv('DB_USER', 'root')
-app.config['MYSQL_PASSWORD'] = os.getenv('DB_PASSWORD', '')
+app.config['MYSQL_PASSWORD'] = os.getenv('DB_PASSWORD', 'admin')
 app.config['MYSQL_DB'] = os.getenv('DB_NAME', 'forum_db')
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URI', 
-    f"mysql://{os.getenv('DB_USER', 'root')}:{os.getenv('DB_PASSWORD', '')}@{os.getenv('DB_HOST', 'localhost')}/{os.getenv('DB_NAME', 'forum_db')}")
+    f"mysql://{os.getenv('DB_USER', 'root')}:{os.getenv('DB_PASSWORD', 'admin')}@{os.getenv('DB_HOST', 'localhost')}/{os.getenv('DB_NAME', 'forum_db')}")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # Initialize MySQL
@@ -77,6 +77,8 @@ with app.app_context():
         from models.comment import Comment
         from models.notification import Notification
         from models.like import Like
+        from models.daily_nutrition import DailyNutrition
+        from models.daily_nutrition_log import DailyNutritionLog
         
         # Create tables
         db.create_all()
@@ -121,6 +123,20 @@ try:
     print("✅ Rute notification berhasil didaftarkan")
 except ImportError as e:
     print(f"❌ Error saat mengimpor notification_routes: {str(e)}")
+
+try:
+    from routes.food_detection_routes import food_detection_bp
+    app.register_blueprint(food_detection_bp, url_prefix='/food_detection')
+    print("✅ Rute food detection berhasil didaftarkan")    
+except ImportError as e:
+    print(f"❌ Error saat mengimpor notification_routes: {str(e)}")
+
+try:
+    from routes.nutrition_routes import nutrition_bp
+    app.register_blueprint(nutrition_bp, url_prefix='/nutrition')
+    print("✅ Rute nutrition berhasil didaftarkan")    
+except ImportError as e:
+    print(f"❌ Error saat mengimpor nutrition_routes: {str(e)}")
 
 
 # Routes
