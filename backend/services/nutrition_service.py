@@ -1,6 +1,6 @@
 def calculate_nutrition_goals(age, weight, height, trimester):
 
-    eer = 354 - 6.91 * age + activity_level * (9.36 * weight_kg + 726 * height_m)
+    eer = 354 - 6.91 * age + 1 * (9.36 * weight + 726 * (float(height) / 100))
 
     if trimester == 1:
         extra_calories = 0
@@ -13,7 +13,7 @@ def calculate_nutrition_goals(age, weight, height, trimester):
 
     total_calories = eer + extra_calories
 
-    protein_grams = weight_kg * 1.1
+    protein_grams = weight * 1.1
     protein_calories = protein_grams * 4
 
     fat_calories = 0.30 * total_calories
@@ -28,3 +28,6 @@ def calculate_nutrition_goals(age, weight, height, trimester):
         "fat": fat_grams,
         "carbs": carbs_grams
     }
+
+
+

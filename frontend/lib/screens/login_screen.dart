@@ -3,6 +3,7 @@ import '../services/auth_service.dart';
 import '../utils/validators.dart';
 import '../widgets/custom_text_field.dart';
 import '../theme/app_theme.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -86,6 +87,11 @@ class _LoginScreenState extends State<LoginScreen>
 
       if (response['success'] == true) {
         // Login berhasil, navigasi ke home screen
+        final jwt = response['token'] as String;
+        final prefs = await SharedPreferences.getInstance();
+        await prefs.setString('access_token', jwt);
+
+        print('🔐 Saved access_token: $jwt');
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(response['message'] ?? 'Login berhasil'),

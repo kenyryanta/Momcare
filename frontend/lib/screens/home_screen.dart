@@ -1,15 +1,72 @@
 // lib/screens/home_screen.dart
 
+import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:pregnancy_app/screens/morning_sickness_screen.dart';
 import 'package:pregnancy_app/screens/nutrition_screen.dart';
 import 'package:pregnancy_app/theme/app_theme.dart';
 import 'package:pregnancy_app/utils/constants.dart';
 import 'package:pregnancy_app/widgets/feature_card.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+class NutritionData {
+  final double goalCalories, goalProtein, goalFat, goalCarbs;
+  final double logCalories, logProtein, logFat, logCarbs;
+  NutritionData({
+    required this.goalCalories,
+    required this.goalProtein,
+    required this.goalFat,
+    required this.goalCarbs,
+    required this.logCalories,
+    required this.logProtein,
+    required this.logFat,
+    required this.logCarbs,
+  });
+}
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
+
+  Future<NutritionData> _fetchNutritionData() async {
+    final prefs = await SharedPreferences.getInstance();
+    final token = prefs.getString('jwtoken') ?? '';
+    if (token.isEmpty) {
+      throw Exception('User not authenticated');
+    }
+    final headers = {'Authorization': 'Bearer $token'};
+    final baseUrl = 'http://192.168.1.10:5000';
+
+    final goalResp = await http.get(
+      Uri.parse('$baseUrl/nutrition/goal'),
+      headers: headers,
+    );
+    if (goalResp.statusCode != 200) {
+      throw Exception('Goal fetch failed: HTTP \${goalResp.statusCode}');
+    }
+    final goalJson = json.decode(goalResp.body);
+
+    final logResp = await http.get(
+      Uri.parse('$baseUrl/nutrition/log/today'),
+      headers: headers,
+    );
+    if (logResp.statusCode != 200) {
+      throw Exception('Log fetch failed: HTTP \${logResp.statusCode}');
+    }
+    final logJson = json.decode(logResp.body);
+
+    return NutritionData(
+      goalCalories: (goalJson['calories'] as num).toDouble(),
+      goalProtein: (goalJson['protein'] as num).toDouble(),
+      goalFat: (goalJson['fat'] as num).toDouble(),
+      goalCarbs: (goalJson['carbs'] as num).toDouble(),
+      logCalories: (logJson['daily_calories'] as num).toDouble(),
+      logProtein: (logJson['daily_protein'] as num).toDouble(),
+      logFat: (logJson['daily_fat'] as num).toDouble(),
+      logCarbs: (logJson['daily_carbs'] as num).toDouble(),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -122,39 +179,33 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                padding: const EdgeInsets.all(16),
                 child: Container(
                   padding: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(16),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.1),
-                        blurRadius: 10,
-                        offset: const Offset(0, 4),
-                      ),
-                    ],
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(16),
+                      boxShadow: [
+                        BoxShadow(
+                            color: Colors.grey.withOpacity(0.1),
+                            blurRadius: 10,
+                            offset: const Offset(0, 4))
+                      ]),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
-                        'Daily Nutrition Goal',
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const Text(
-                        'Nanti diambil dari database',
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w600,
-                          color: AppTheme.primaryColor,
-                        ),
-                      ),
+                      const Text('Daily Nutrition',
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.bold)),
+                      const SizedBox(height: 8),
+                      Text(
+                          'Calories: \${data.logCalories.toInt()} / \${data.goalCalories.toInt()}'),
+                      Text(
+                          'Protein:  \${data.logProtein.toInt()}g / \${data.goalProtein.toInt()}g'),
+                      Text(
+                          'Fat:      \${data.logFat.toInt()}g / \${data.goalFat.toInt()}g'),
+                      Text(
+                          'Carbs:    \${data.logCarbs.toInt()}g / \${data.goalCarbs.toInt()}g'),
                     ],
                   ),
                 ),

@@ -135,6 +135,7 @@ class _FoodResultScreenState extends State<FoodResultScreen> {
 
     final prefs = await SharedPreferences.getInstance();
     final token = prefs.getString('access_token');
+    print('🔍 Retrieved access_token: $token');
     if (token == null) {
       ScaffoldMessenger.of(context)
           .showSnackBar(const SnackBar(content: Text('Please log in first.')));

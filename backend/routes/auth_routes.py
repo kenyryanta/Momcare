@@ -1,6 +1,8 @@
 from flask import Blueprint, request, jsonify
 from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identity
-
+from services.nutrition_service import calculate_nutrition_goals 
+from models.daily_nutrition import DailyNutrition            
+from models import db
 from models.user import User
 import datetime
 auth_bp = Blueprint('auth', __name__)
@@ -20,6 +22,26 @@ def register():
     
     try:
         new_user = User.create(data['username'], data['email'], data['password'], data['age'], data['height'], data['weight'], data['trimester'])
+        
+        # 2) Calculate initial nutrition goals for this user
+        goals = calculate_nutrition_goals(
+            new_user.age,
+            new_user.weight,
+            new_user.height,
+            new_user.trimester
+        )
+        # 3) Store the goals in daily_nutrition table
+        initial_goal = DailyNutrition(
+            user_id=new_user.id,
+            calories=goals['calories'],
+            protein=goals['protein'],
+            fat=goals['fat'],
+            carbs=goals['carbs']
+        )
+        db.session.add(initial_goal)
+        db.session.commit()
+        
+        
         access_token = create_access_token(identity=str(new_user.id))
         return jsonify({
         'success': True,

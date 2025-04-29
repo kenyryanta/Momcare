@@ -84,26 +84,31 @@ def get_nutritional_info():
 @food_detection_bp.route('/store_nutritional_info', methods=['POST'])
 @jwt_required()
 def store_nutritional_info(): 
-    
     from models import db  
     from models.daily_nutrition_log import DailyNutritionLog
     from models.user import User
+    from datetime import date 
 
     print("Store nutritional info route hit")
     data = request.get_json()
     print("→ payload:", data)
 
+    # Retrieve and cast the JWT identity to int
+    raw_id = get_jwt_identity()
+    try:
+        user_id = int(raw_id)  # Highlight: convert string identity to integer
+    except (TypeError, ValueError):
+        return jsonify({'error': 'Invalid user_id format'}), 400
 
-    user_id = get_jwt_identity()
     calories = data.get('calories')
     protein = data.get('protein')
     fat = data.get('fat')
     carbs = data.get('carbs')
+
     if not user_id:
         return jsonify({'error': 'Missing user_id'}), 400
 
     user = User.query.get(user_id)
-    
     if not user:
         return jsonify({'error': 'User not found'}), 404
 
@@ -112,7 +117,8 @@ def store_nutritional_info():
         daily_calories=calories,
         daily_protein=protein,
         daily_fat=fat,
-        daily_carbs=carbs
+        daily_carbs=carbs,
+        date=date.today()
     )
     db.session.add(nutrition_entry)
     try:
