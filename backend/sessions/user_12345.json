@@ -1,0 +1,40 @@
+{
+  "user_id": "user_12345",
+  "messages": [
+    {
+      "content": "Halo, apa itu stunting?",
+      "is_user": true,
+      "timestamp": "2025-07-19T23:30:09.930862",
+      "attachments": []
+    },
+    {
+      "content": "Untuk mencegah stunting, berikut adalah hal-hal penting yang perlu diperhatikan:\n\n• ASI eksklusif (Prioritas: Tinggi): Berikan ASI eksklusif selama 6 bulan pertama untuk memberikan nutrisi optimal dan meningkatkan sistem kekebalan tubuh bayi\n\n• Nutrisi ibu hamil (Prioritas: Tinggi): Pastikan ibu hamil mendapatkan nutrisi yang cukup, terutama protein, zat besi, asam folat, dan kalsium\n\n• MPASI bergizi (Prioritas: Tinggi): Berikan makanan pendamping ASI yang bergizi dan beragam setelah bayi berusia 6 bulan\n\n• Pemantauan pertumbuhan (Prioritas: Sedang): Pantau pertumbuhan anak secara teratur di posyandu atau fasilitas kesehatan\n\n• Sanitasi dan kebersihan (Prioritas: Sedang): Jaga kebersihan lingkungan, cuci tangan dengan sabun, dan pastikan akses ke air bersih untuk mencegah infeksi dan diare\n\n• Imunisasi lengkap (Prioritas: Sedang): Berikan imunisasi lengkap sesuai jadwal untuk melindungi anak dari penyakit infeksi yang dapat menghambat pertumbuhan\n\nPenting untuk memulai pencegahan stunting sejak masa kehamilan dengan memastikan ibu mendapatkan nutrisi yang cukup.",
+      "is_user": false,
+      "timestamp": "2025-07-19T23:30:09.959071",
+      "attachments": []
+    },
+    {
+      "content": "Saran makanan untuk trimester pertama",
+      "is_user": true,
+      "timestamp": "2025-07-19T23:31:05.147014",
+      "attachments": []
+    },
+    {
+      "content": "Selamat atas kehamilan Anda! Pada trimester pertama ini, nutrisi yang tepat sangat penting untuk kesehatan Anda dan perkembangan janin. Berikut adalah beberapa saran makanan dan nutrisi yang perlu Anda perhatikan:\n\n**Kebutuhan Nutrisi Penting di Trimester Pertama:**\n\n*   **Kalori:** Anda membutuhkan tambahan sekitar 300 kalori per hari dari biasanya.\n*   **Protein:** Tingkatkan asupan protein Anda menjadi 60 gram per hari. Protein penting untuk pertumbuhan dan perkembangan janin.\n*   **Folat (600μg/hari):** Sangat penting untuk mencegah cacat tabung saraf pada bayi. Sumber folat yang baik antara lain:\n    *   Sayuran hijau (bayam)\n    *   Kacang-kacangan\n    *   Jeruk\n*   **Zat Besi (27mg/hari):** Penting untuk mencegah anemia pada ibu hamil. Sumber zat besi yang baik antara lain:\n    *   Daging merah tanpa lemak\n    *   Bayam\n    *   Kacang-kacangan\n*   **Kalsium (1000mg/hari):** Penting untuk pembentukan tulang dan gigi janin. Sumber kalsium yang baik antara lain:\n    *   Susu\n    *   Keju\n    *   Yogurt\n\n**Rekomendasi Makanan:**\n\nBerikut beberapa contoh makanan yang bisa Anda konsumsi untuk memenuhi kebutuhan nutrisi di trimester pertama:\n\n*   **Sumber Protein:**\n    *   **Telur:** Satu butir telur (50g) adalah sumber protein lengkap dan kolin, yang penting untuk perkembangan otak janin.\n    *   **Ikan Salmon:** Konsumsi 85-140g ikan salmon 2-3 kali seminggu untuk mendapatkan omega-3 yang baik untuk perkembangan otak janin.\n    *   **Daging Tanpa Lemak:** Konsumsi sekitar 85g per hari untuk mendapatkan zat besi heme yang mudah diserap tubuh.\n*   **Sayuran:**\n    *   **Bayam:** Satu mangkuk (30g) bayam kaya akan zat besi, folat, dan vitamin K.\n    *   **Brokoli:** Satu mangkuk (30g) brokoli kaya akan folat, kalsium, dan serat.\n    *   **Kacang-kacangan:** Setengah mangkuk (100g) kacang-kacangan adalah sumber protein nabati dan serat yang baik.\n\n**Tips Tambahan:**\n\n*   **Makan Porsi Kecil Tapi Sering:** Ini dapat membantu mengatasi mual yang sering terjadi di trimester pertama.\n*   **Hindari Makanan Berminyak dan Pedas:** Makanan ini dapat memperburuk mual dan gangguan pencernaan.\n*   **Atasi *Morning Sickness*:** Cobalah makan biskuit tawar atau roti kering di pagi hari sebelum bangun dari tempat tidur. Jahe juga bisa membantu meredakan mual.\n\n**Contoh Menu Harian:**\n\nTentu saja, ini hanya contoh dan Anda bisa menyesuaikannya dengan selera dan kebutuhan Anda:\n\n*   **Sarapan:** Telur rebus, roti gandum dengan alpukat, dan segelas susu.\n*   **Camilan Pagi:** Yogurt dengan buah-buahan.\n*   **Makan Siang:** Nasi merah, ikan salmon panggang, dan tumis brokoli.\n*   **Camilan Sore:** Kacang-kacangan dan buah-buahan.\n*   **Makan Malam:** Daging sapi tanpa lemak, bayam yang ditumis, dan kentang panggang.\n\n**Penting untuk diingat:**\n\nKonsultasikan dengan dokter atau ahli gizi untuk mendapatkan saran nutrisi yang lebih personal dan sesuai dengan kondisi kesehatan Anda. Setiap kehamilan unik, dan kebutuhan nutrisi setiap ibu hamil bisa berbeda.\n\nSemoga informasi ini bermanfaat dan kehamilan Anda berjalan lancar!\n",
+      "is_user": false,
+      "timestamp": "2025-07-19T23:31:11.561002",
+      "attachments": []
+    }
+  ],
+  "context": {
+    "last_intent": "nutrisi_kehamilan",
+    "last_entities": {
+      "trimester": "pertama"
+    },
+    "last_context": [
+      "rekomendasi_makanan",
+      "trimester_pertama",
+      "rekomendasi_makanan"
+    ]
+  }
+}

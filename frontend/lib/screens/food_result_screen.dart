@@ -71,7 +71,7 @@ class _FoodResultScreenState extends State<FoodResultScreen> {
     try {
       final resp = await http.post(
         Uri.parse(
-            'http://192.168.1.10:5000/food_detection/get_nutritional_info'),
+            'http://192.168.0.101:5000/food_detection/get_nutritional_info'),
         headers: {'Content-Type': 'application/json'},
         body: jsonEncode({'imageId': widget.imageId}),
       );
@@ -146,7 +146,7 @@ class _FoodResultScreenState extends State<FoodResultScreen> {
     try {
       final resp = await http.post(
         Uri.parse(
-            'http://192.168.1.10:5000/food_detection/store_nutritional_info'),
+            'http://192.168.0.101:5000/food_detection/store_nutritional_info'),
         headers: {
           'Content-Type': 'application/json',
           'Authorization': 'Bearer $token',

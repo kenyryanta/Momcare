@@ -68,7 +68,7 @@ class _ForumScreenState extends State<ForumScreen> {
 
     if (imagePath.startsWith('http')) return imagePath;
 
-    const String baseUrl = 'http://192.168.0.103:5000';
+    const String baseUrl = 'http://192.168.0.101:5000';
 
     if (imagePath.startsWith('/static')) {
       return '$baseUrl$imagePath';

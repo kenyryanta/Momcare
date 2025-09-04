@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # LogMeal API
-API_USER_TOKEN = '18b96a8cdf45b26fbd71223995eeaba97de0e72f'
+API_USER_TOKEN = '77ad133ed98398337b1d6dbba944414ee0122c71'
 HEADERS = {'Authorization': f'Bearer {API_USER_TOKEN}'}
 API_URL = 'https://api.logmeal.es/v2/image/segmentation/complete'
 

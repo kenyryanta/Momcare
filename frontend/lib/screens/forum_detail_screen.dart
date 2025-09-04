@@ -46,7 +46,7 @@ class _ForumDetailScreenState extends State<ForumDetailScreen> {
     if (imagePath.startsWith('http')) return imagePath;
 
     // Jika tidak, tambahkan baseUrl
-    const String baseUrl = 'http://192.168.0.103:5000';
+    const String baseUrl = 'http://192.168.0.101:5000';
 
     // Jika imagePath dimulai dengan '/static', tambahkan baseUrl saja
     if (imagePath.startsWith('/static')) {

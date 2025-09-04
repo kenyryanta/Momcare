@@ -76,7 +76,7 @@ class _FoodCaptureState extends State<FoodCapture> {
     try {
       final response = await http.post(
         Uri.parse(
-            'http://192.168.1.10:5000/food_detection/get_nutrition_by_text'),
+            'http://192.168.0.101:5000/food_detection/get_nutrition_by_text'),
         headers: {'Content-Type': 'application/json'},
         body: jsonEncode({'items': items}),
       );
@@ -140,7 +140,7 @@ class _FoodCaptureState extends State<FoodCapture> {
     final compressed = img.encodeJpg(image, quality: 25);
     final request = http.MultipartRequest(
       'POST',
-      Uri.parse('http://192.168.1.10:5000/food_detection/detect_food'),
+      Uri.parse('http://192.168.0.101:5000/food_detection/detect_food'),
     );
     request.files.add(http.MultipartFile.fromBytes(
       'file',

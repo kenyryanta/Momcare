@@ -1,0 +1,160 @@
+2025-07-19 22:30:20,456 - GeminiIntegration - INFO - Model utama 'gemini-2.0-flash' berhasil diinisialisasi
+2025-07-19 22:30:20,459 - GeminiIntegration - INFO - Model fallback 'gemini-1.5-flash' berhasil diinisialisasi
+2025-07-19 22:30:22,637 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.101:5000
+2025-07-19 22:30:22,640 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-19 22:30:22,657 - werkzeug - INFO -  * Restarting with stat
+2025-07-19 22:30:29,270 - GeminiIntegration - INFO - Model utama 'gemini-2.0-flash' berhasil diinisialisasi
+2025-07-19 22:30:29,270 - GeminiIntegration - INFO - Model fallback 'gemini-1.5-flash' berhasil diinisialisasi
+2025-07-19 22:30:29,331 - werkzeug - WARNING -  * Debugger is active!
+2025-07-19 22:30:29,343 - werkzeug - INFO -  * Debugger PIN: 101-205-827
+2025-07-19 22:38:51,809 - werkzeug - INFO -  * Detected change in 'C:\\SOCS\\WEB_PROG\\momcare\\MomCare\\MomCare\\backend\\app.py', reloading
+2025-07-19 22:38:53,094 - werkzeug - INFO -  * Restarting with stat
+2025-07-19 22:39:05,399 - GeminiIntegration - INFO - Model utama 'gemini-2.0-flash' berhasil diinisialisasi
+2025-07-19 22:39:05,400 - GeminiIntegration - INFO - Model fallback 'gemini-1.5-flash' berhasil diinisialisasi
+2025-07-19 22:39:06,728 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.101:5000
+2025-07-19 22:39:06,728 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-19 22:39:06,731 - werkzeug - INFO -  * Restarting with stat
+2025-07-19 22:39:11,535 - GeminiIntegration - INFO - Model utama 'gemini-2.0-flash' berhasil diinisialisasi
+2025-07-19 22:39:11,535 - GeminiIntegration - INFO - Model fallback 'gemini-1.5-flash' berhasil diinisialisasi
+2025-07-19 22:39:11,594 - werkzeug - WARNING -  * Debugger is active!
+2025-07-19 22:39:11,606 - werkzeug - INFO -  * Debugger PIN: 101-205-827
+2025-07-19 22:44:34,380 - werkzeug - INFO -  * Detected change in 'C:\\SOCS\\WEB_PROG\\momcare\\MomCare\\MomCare\\backend\\app.py', reloading
+2025-07-19 22:44:35,396 - werkzeug - INFO -  * Restarting with stat
+2025-07-19 22:44:41,841 - GeminiIntegration - INFO - Model utama 'gemini-2.0-flash' berhasil diinisialisasi
+2025-07-19 22:44:41,841 - GeminiIntegration - INFO - Model fallback 'gemini-1.5-flash' berhasil diinisialisasi
+2025-07-19 22:44:41,931 - werkzeug - WARNING -  * Debugger is active!
+2025-07-19 22:44:41,947 - werkzeug - INFO -  * Debugger PIN: 101-205-827
+2025-07-19 22:45:50,277 - GeminiIntegration - INFO - Model utama 'gemini-2.0-flash' berhasil diinisialisasi
+2025-07-19 22:45:50,278 - GeminiIntegration - INFO - Model fallback 'gemini-1.5-flash' berhasil diinisialisasi
+2025-07-19 22:45:51,627 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.101:5000
+2025-07-19 22:45:51,628 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-19 22:45:51,630 - werkzeug - INFO -  * Restarting with stat
+2025-07-19 22:45:57,354 - GeminiIntegration - INFO - Model utama 'gemini-2.0-flash' berhasil diinisialisasi
+2025-07-19 22:45:57,354 - GeminiIntegration - INFO - Model fallback 'gemini-1.5-flash' berhasil diinisialisasi
+2025-07-19 22:45:57,478 - werkzeug - WARNING -  * Debugger is active!
+2025-07-19 22:45:57,499 - werkzeug - INFO -  * Debugger PIN: 101-205-827
+2025-07-19 23:04:16,167 - werkzeug - INFO - 192.168.0.103 - - [19/Jul/2025 23:04:16] "[35m[1mGET /api/forums?page=1&per_page=10&sort_by=created_at&order=desc HTTP/1.1[0m" 500 -
+2025-07-19 23:04:18,144 - werkzeug - INFO - 192.168.0.103 - - [19/Jul/2025 23:04:18] "[35m[1mGET /api/forums?page=1&per_page=10&sort_by=created_at&order=desc HTTP/1.1[0m" 500 -
+2025-07-19 23:04:34,199 - werkzeug - INFO - 192.168.0.103 - - [19/Jul/2025 23:04:34] "[35m[1mGET /api/forums?page=1&per_page=10&sort_by=created_at&order=desc HTTP/1.1[0m" 500 -
+2025-07-19 23:04:35,321 - GeminiIntegration - INFO - Request #1, time since last request: 1752941075.32s
+2025-07-19 23:04:40,988 - GeminiIntegration - INFO - Berhasil mendapatkan respons dari model gemini-2.0-flash (latency: 5.66s)
+2025-07-19 23:04:41,002 - werkzeug - INFO - 192.168.0.103 - - [19/Jul/2025 23:04:41] "POST /api/chat HTTP/1.1" 200 -
+2025-07-19 23:04:43,101 - GeminiIntegration - INFO - Request #2, time since last request: 7.78s
+2025-07-19 23:04:48,210 - GeminiIntegration - INFO - Berhasil mendapatkan respons dari model gemini-2.0-flash (latency: 5.11s)
+2025-07-19 23:04:48,216 - werkzeug - INFO - 192.168.0.103 - - [19/Jul/2025 23:04:48] "POST /api/chat HTTP/1.1" 200 -
+2025-07-19 23:07:58,866 - werkzeug - INFO - 192.168.0.103 - - [19/Jul/2025 23:07:58] "[35m[1mGET /api/forums?page=1&per_page=10&sort_by=created_at&order=desc HTTP/1.1[0m" 500 -
+2025-07-19 23:08:03,815 - GeminiIntegration - INFO - Request #3, time since last request: 200.71s
+2025-07-19 23:08:07,743 - GeminiIntegration - INFO - Berhasil mendapatkan respons dari model gemini-2.0-flash (latency: 3.93s)
+2025-07-19 23:08:07,747 - werkzeug - INFO - 192.168.0.103 - - [19/Jul/2025 23:08:07] "POST /api/chat HTTP/1.1" 200 -
+2025-07-19 23:08:11,724 - GeminiIntegration - INFO - Request #4, time since last request: 7.91s
+2025-07-19 23:08:15,721 - GeminiIntegration - INFO - Berhasil mendapatkan respons dari model gemini-2.0-flash (latency: 4.00s)
+2025-07-19 23:08:15,733 - werkzeug - INFO - 192.168.0.103 - - [19/Jul/2025 23:08:15] "POST /api/chat HTTP/1.1" 200 -
+2025-07-19 23:09:05,018 - werkzeug - INFO - 192.168.0.103 - - [19/Jul/2025 23:09:05] "[35m[1mPOST /api/auth/login HTTP/1.1[0m" 500 -
+2025-07-19 23:09:10,612 - werkzeug - INFO - 192.168.0.103 - - [19/Jul/2025 23:09:10] "[35m[1mPOST /api/auth/login HTTP/1.1[0m" 500 -
+2025-07-19 23:11:15,151 - GeminiIntegration - INFO - Model utama 'gemini-2.0-flash' berhasil diinisialisasi
+2025-07-19 23:11:15,152 - GeminiIntegration - INFO - Model fallback 'gemini-1.5-flash' berhasil diinisialisasi
+2025-07-19 23:11:16,576 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.101:5000
+2025-07-19 23:11:16,576 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-19 23:11:16,580 - werkzeug - INFO -  * Restarting with stat
+2025-07-19 23:11:21,167 - GeminiIntegration - INFO - Model utama 'gemini-2.0-flash' berhasil diinisialisasi
+2025-07-19 23:11:21,168 - GeminiIntegration - INFO - Model fallback 'gemini-1.5-flash' berhasil diinisialisasi
+2025-07-19 23:11:21,211 - werkzeug - WARNING -  * Debugger is active!
+2025-07-19 23:11:21,221 - werkzeug - INFO -  * Debugger PIN: 101-205-827
+2025-07-19 23:11:44,808 - GeminiIntegration - INFO - Model utama 'gemini-2.0-flash' berhasil diinisialisasi
+2025-07-19 23:11:44,808 - GeminiIntegration - INFO - Model fallback 'gemini-1.5-flash' berhasil diinisialisasi
+2025-07-19 23:11:46,144 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.101:5000
+2025-07-19 23:11:46,144 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-19 23:11:46,147 - werkzeug - INFO -  * Restarting with stat
+2025-07-19 23:11:50,521 - GeminiIntegration - INFO - Model utama 'gemini-2.0-flash' berhasil diinisialisasi
+2025-07-19 23:11:50,521 - GeminiIntegration - INFO - Model fallback 'gemini-1.5-flash' berhasil diinisialisasi
+2025-07-19 23:11:50,573 - werkzeug - WARNING -  * Debugger is active!
+2025-07-19 23:11:50,592 - werkzeug - INFO -  * Debugger PIN: 101-205-827
+2025-07-19 23:17:42,925 - werkzeug - INFO - 127.0.0.1 - - [19/Jul/2025 23:17:42] "[33mPOST /auth/register HTTP/1.1[0m" 404 -
+2025-07-19 23:17:52,710 - werkzeug - INFO - 127.0.0.1 - - [19/Jul/2025 23:17:52] "[33mPOST /auth/login HTTP/1.1[0m" 404 -
+2025-07-19 23:18:40,139 - werkzeug - INFO - 127.0.0.1 - - [19/Jul/2025 23:18:40] "[33mPOST /auth/login HTTP/1.1[0m" 404 -
+2025-07-19 23:19:02,676 - werkzeug - INFO - 127.0.0.1 - - [19/Jul/2025 23:19:02] "[33mPOST /auth/register HTTP/1.1[0m" 404 -
+2025-07-19 23:23:43,957 - werkzeug - INFO - 127.0.0.1 - - [19/Jul/2025 23:23:43] "[35m[1mPOST /api/auth/register HTTP/1.1[0m" 201 -
+2025-07-19 23:25:21,344 - werkzeug - INFO - 127.0.0.1 - - [19/Jul/2025 23:25:21] "[31m[1mPOST /api/auth/login HTTP/1.1[0m" 401 -
+2025-07-19 23:25:35,217 - werkzeug - INFO - 127.0.0.1 - - [19/Jul/2025 23:25:35] "POST /api/auth/login HTTP/1.1" 200 -
+2025-07-19 23:26:01,081 - werkzeug - INFO - 127.0.0.1 - - [19/Jul/2025 23:26:01] "GET /api/auth/protected HTTP/1.1" 200 -
+2025-07-19 23:26:20,426 - werkzeug - INFO - 127.0.0.1 - - [19/Jul/2025 23:26:20] "[31m[1mPOST /api/auth/register HTTP/1.1[0m" 400 -
+2025-07-19 23:26:30,474 - werkzeug - INFO - 127.0.0.1 - - [19/Jul/2025 23:26:30] "[31m[1mPOST /api/auth/register HTTP/1.1[0m" 400 -
+2025-07-19 23:26:40,441 - werkzeug - INFO - 127.0.0.1 - - [19/Jul/2025 23:26:40] "[31m[1mPOST /api/auth/login HTTP/1.1[0m" 401 -
+2025-07-19 23:27:43,560 - werkzeug - INFO - 127.0.0.1 - - [19/Jul/2025 23:27:43] "POST /api/auth/login HTTP/1.1" 200 -
+2025-07-19 23:30:09,963 - werkzeug - INFO - 127.0.0.1 - - [19/Jul/2025 23:30:09] "POST /api/chat HTTP/1.1" 200 -
+2025-07-19 23:30:59,344 - werkzeug - INFO - 127.0.0.1 - - [19/Jul/2025 23:30:59] "[31m[1mPOST /api/chat HTTP/1.1[0m" 400 -
+2025-07-19 23:31:05,156 - GeminiIntegration - INFO - Request #1, time since last request: 1752942665.16s
+2025-07-19 23:31:11,558 - GeminiIntegration - INFO - Berhasil mendapatkan respons dari model gemini-2.0-flash (latency: 6.40s)
+2025-07-19 23:31:11,564 - werkzeug - INFO - 127.0.0.1 - - [19/Jul/2025 23:31:11] "POST /api/chat HTTP/1.1" 200 -
+2025-07-19 23:31:33,349 - werkzeug - INFO - 127.0.0.1 - - [19/Jul/2025 23:31:33] "GET /api/history/user_12345 HTTP/1.1" 200 -
+2025-07-19 23:31:47,402 - werkzeug - INFO - 127.0.0.1 - - [19/Jul/2025 23:31:47] "POST /api/preferences HTTP/1.1" 200 -
+2025-07-19 23:32:06,665 - werkzeug - INFO - 127.0.0.1 - - [19/Jul/2025 23:32:06] "POST /api/init-data HTTP/1.1" 200 -
+2025-07-19 23:35:44,863 - werkzeug - INFO - 127.0.0.1 - - [19/Jul/2025 23:35:44] "[31m[1mPOST /api/forums HTTP/1.1[0m" 422 -
+2025-07-19 23:36:03,915 - werkzeug - INFO - 127.0.0.1 - - [19/Jul/2025 23:36:03] "[35m[1mPOST /api/forums HTTP/1.1[0m" 201 -
+2025-07-19 23:36:13,904 - werkzeug - INFO - 127.0.0.1 - - [19/Jul/2025 23:36:13] "GET /api/forums?sort_by=created_at&order=desc HTTP/1.1" 200 -
+2025-07-19 23:36:22,841 - werkzeug - INFO - 127.0.0.1 - - [19/Jul/2025 23:36:22] "GET /api/forums/1 HTTP/1.1" 200 -
+2025-07-19 23:36:28,708 - werkzeug - INFO - 127.0.0.1 - - [19/Jul/2025 23:36:28] "[33mGET /api/forums/2 HTTP/1.1[0m" 404 -
+2025-07-19 23:36:32,825 - werkzeug - INFO - 127.0.0.1 - - [19/Jul/2025 23:36:32] "GET /api/forums/1 HTTP/1.1" 200 -
+2025-07-19 23:36:49,011 - werkzeug - INFO - 127.0.0.1 - - [19/Jul/2025 23:36:49] "[31m[1mPUT /api/forums/1 HTTP/1.1[0m" 422 -
+2025-07-19 23:36:55,739 - werkzeug - INFO - 127.0.0.1 - - [19/Jul/2025 23:36:55] "PUT /api/forums/1 HTTP/1.1" 200 -
+2025-07-19 23:37:07,540 - werkzeug - INFO - 127.0.0.1 - - [19/Jul/2025 23:37:07] "[31m[1mPOST /api/forums/1/comments HTTP/1.1[0m" 422 -
+2025-07-19 23:37:12,661 - werkzeug - INFO - 127.0.0.1 - - [19/Jul/2025 23:37:12] "[35m[1mPOST /api/forums/1/comments HTTP/1.1[0m" 201 -
+2025-07-19 23:37:23,216 - werkzeug - INFO - 127.0.0.1 - - [19/Jul/2025 23:37:23] "[31m[1mPUT /api/comments/1 HTTP/1.1[0m" 422 -
+2025-07-19 23:37:30,727 - werkzeug - INFO - 127.0.0.1 - - [19/Jul/2025 23:37:30] "PUT /api/comments/1 HTTP/1.1" 200 -
+2025-07-19 23:37:40,856 - werkzeug - INFO - 127.0.0.1 - - [19/Jul/2025 23:37:40] "[31m[1mPOST /api/forums/1/like HTTP/1.1[0m" 422 -
+2025-07-19 23:37:47,192 - werkzeug - INFO - 127.0.0.1 - - [19/Jul/2025 23:37:47] "POST /api/forums/1/like HTTP/1.1" 200 -
+2025-07-19 23:37:51,137 - werkzeug - INFO - 127.0.0.1 - - [19/Jul/2025 23:37:51] "POST /api/forums/1/like HTTP/1.1" 200 -
+2025-07-19 23:37:52,981 - werkzeug - INFO - 127.0.0.1 - - [19/Jul/2025 23:37:52] "POST /api/forums/1/like HTTP/1.1" 200 -
+2025-07-19 23:37:54,744 - werkzeug - INFO - 127.0.0.1 - - [19/Jul/2025 23:37:54] "POST /api/forums/1/like HTTP/1.1" 200 -
+2025-07-19 23:37:56,230 - werkzeug - INFO - 127.0.0.1 - - [19/Jul/2025 23:37:56] "POST /api/forums/1/like HTTP/1.1" 200 -
+2025-07-19 23:38:04,483 - werkzeug - INFO - 127.0.0.1 - - [19/Jul/2025 23:38:04] "[31m[1mGET /api/notifications HTTP/1.1[0m" 422 -
+2025-07-19 23:38:10,153 - werkzeug - INFO - 127.0.0.1 - - [19/Jul/2025 23:38:10] "GET /api/notifications HTTP/1.1" 200 -
+2025-07-19 23:38:28,846 - werkzeug - INFO - 127.0.0.1 - - [19/Jul/2025 23:38:28] "[31m[1mPOST /api/notifications/1/read HTTP/1.1[0m" 422 -
+2025-07-19 23:38:34,230 - werkzeug - INFO - 127.0.0.1 - - [19/Jul/2025 23:38:34] "POST /api/notifications/1/read HTTP/1.1" 200 -
+2025-07-19 23:42:19,682 - werkzeug - INFO - 127.0.0.1 - - [19/Jul/2025 23:42:19] "[35m[1mPOST /api/forums HTTP/1.1[0m" 201 -
+2025-07-19 23:42:30,422 - werkzeug - INFO - 127.0.0.1 - - [19/Jul/2025 23:42:30] "GET /api/forums?sort_by=created_at&order=desc HTTP/1.1" 200 -
+2025-07-19 23:44:29,378 - werkzeug - INFO - 127.0.0.1 - - [19/Jul/2025 23:44:29] "GET /api/forums/1 HTTP/1.1" 200 -
+2025-07-19 23:44:40,932 - werkzeug - INFO - 127.0.0.1 - - [19/Jul/2025 23:44:40] "[35m[1mPOST /api/forums HTTP/1.1[0m" 201 -
+2025-07-19 23:45:04,013 - werkzeug - INFO - 127.0.0.1 - - [19/Jul/2025 23:45:04] "[35m[1mPOST /api/forums HTTP/1.1[0m" 201 -
+2025-07-19 23:47:18,068 - werkzeug - INFO - 192.168.0.103 - - [19/Jul/2025 23:47:18] "[31m[1mPOST /api/auth/login HTTP/1.1[0m" 401 -
+2025-07-19 23:48:52,620 - werkzeug - INFO - 127.0.0.1 - - [19/Jul/2025 23:48:52] "[31m[1mPOST /food_detection/detect_food HTTP/1.1[0m" 400 -
+2025-07-19 23:49:49,343 - werkzeug - INFO -  * Detected change in 'C:\\SOCS\\WEB_PROG\\momcare\\MomCare\\MomCare\\backend\\routes\\food_detection_routes.py', reloading
+2025-07-19 23:49:53,644 - werkzeug - INFO -  * Restarting with stat
+2025-07-19 23:50:01,534 - GeminiIntegration - INFO - Model utama 'gemini-2.0-flash' berhasil diinisialisasi
+2025-07-19 23:50:01,534 - GeminiIntegration - INFO - Model fallback 'gemini-1.5-flash' berhasil diinisialisasi
+2025-07-19 23:50:01,619 - werkzeug - WARNING -  * Debugger is active!
+2025-07-19 23:50:01,634 - werkzeug - INFO -  * Debugger PIN: 101-205-827
+2025-07-19 23:50:15,510 - GeminiIntegration - INFO - Model utama 'gemini-2.0-flash' berhasil diinisialisasi
+2025-07-19 23:50:15,510 - GeminiIntegration - INFO - Model fallback 'gemini-1.5-flash' berhasil diinisialisasi
+2025-07-19 23:50:17,117 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.101:5000
+2025-07-19 23:50:17,118 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-19 23:50:17,122 - werkzeug - INFO -  * Restarting with stat
+2025-07-19 23:50:23,854 - GeminiIntegration - INFO - Model utama 'gemini-2.0-flash' berhasil diinisialisasi
+2025-07-19 23:50:23,855 - GeminiIntegration - INFO - Model fallback 'gemini-1.5-flash' berhasil diinisialisasi
+2025-07-19 23:50:24,053 - werkzeug - WARNING -  * Debugger is active!
+2025-07-19 23:50:24,081 - werkzeug - INFO -  * Debugger PIN: 101-205-827
+2025-07-19 23:51:05,571 - werkzeug - INFO - 127.0.0.1 - - [19/Jul/2025 23:51:05] "[31m[1mPOST /food_detection/detect_food HTTP/1.1[0m" 401 -
+2025-07-19 23:51:34,024 - werkzeug - INFO - 127.0.0.1 - - [19/Jul/2025 23:51:34] "[31m[1mPOST /food_detection/get_nutritional_info HTTP/1.1[0m" 400 -
+2025-07-19 23:51:53,237 - werkzeug - INFO - 127.0.0.1 - - [19/Jul/2025 23:51:53] "[31m[1mPOST /food_detection/store_nutritional_info HTTP/1.1[0m" 422 -
+2025-07-20 15:07:24,496 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 15:07:24] "[35m[1mPOST /api/auth/register HTTP/1.1[0m" 201 -
+2025-07-20 15:07:54,030 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 15:07:54] "POST /api/auth/login HTTP/1.1" 200 -
+2025-07-20 15:08:22,824 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 15:08:22] "[31m[1mPOST /food_detection/detect_food HTTP/1.1[0m" 400 -
+2025-07-20 15:08:37,037 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 15:08:37] "[31m[1mPOST /food_detection/detect_food HTTP/1.1[0m" 401 -

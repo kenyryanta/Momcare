@@ -5,7 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../models/user_model.dart';
 
 class AuthService with ChangeNotifier {
-  static const String baseUrl = 'http://192.168.1.10:5000/api';
+  static const String baseUrl = 'http://192.168.0.101:5000/api';
 
   bool _isAuthenticated = false;
   String? _token;
